@@ -138,4 +138,4 @@ MonoBehaviour:
     type: 3}
   impactEffect: {fileID: 7607509145588697428, guid: 5142286f53f919045be9e41988502a98,
     type: 3}
-  damagePoints: 1
+  damagePoints: 2
