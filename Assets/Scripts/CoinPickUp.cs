@@ -6,6 +6,8 @@ public class CoinPickUp : MonoBehaviour
 {
     public int pointsToAdd;
 
+    public AudioSource coinPickUpSound;
+
     void Start()
     {
 
@@ -23,6 +25,8 @@ public class CoinPickUp : MonoBehaviour
             return;
         }
         ScoreManager.AddPoints(pointsToAdd);
+
+        coinPickUpSound.Play();
 
         Destroy(gameObject);
     }
