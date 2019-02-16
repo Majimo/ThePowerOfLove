@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5441645926482297314}
   - component: {fileID: 8828029728134693553}
   - component: {fileID: 5850402806519742151}
+  - component: {fileID: 2884564204213291967}
   m_Layer: 10
   m_Name: Heart
   m_TagString: Untagged
@@ -139,3 +140,16 @@ MonoBehaviour:
   impactEffect: {fileID: 7607509145588697428, guid: 5142286f53f919045be9e41988502a98,
     type: 3}
   damagePoints: 2
+--- !u!114 &2884564204213291967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627735215759715045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e2448a82f2d6d948b256349d9179af1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 2
