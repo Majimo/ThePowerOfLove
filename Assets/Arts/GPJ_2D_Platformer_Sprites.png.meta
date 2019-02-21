@@ -12,6 +12,7 @@ TextureImporter:
     21300014: Enemy_3
     21300016: Heart
     21300018: Coin
+    21300020: Level_Exit
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -311,6 +312,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 62127beb648fe4844b4b1d77f07431a8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_Exit
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 48
+        width: 19
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0c2f1bb02cbb174a82f1d6755d75327
       vertices: []
       indices: 
       edges: []
