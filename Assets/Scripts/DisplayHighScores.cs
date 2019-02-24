@@ -17,12 +17,13 @@ public class DisplayHighScores : MonoBehaviour
     void Start()
     {
         highScores = new List<PlayerScore>();
-        highScores.Add(new PlayerScore() { playerName = "Pierre", score = 5000 });
-        highScores.Add(new PlayerScore() { playerName = "Pierre", score = 4000 });
-        highScores.Add(new PlayerScore() { playerName = "Pierre", score = 3000 });
-        highScores.Add(new PlayerScore() { playerName = "Pierre", score = 2000 });
-        highScores.Add(new PlayerScore() { playerName = "Pierre", score = 1000 });
-
+        highScores.Add(new PlayerScore() { playerName = "Pierre", score = ScoreManager.GetHigherScores()[0] });
+        highScores.Add(new PlayerScore() { playerName = "Pierre", score = ScoreManager.GetHigherScores()[1] });
+        highScores.Add(new PlayerScore() { playerName = "Pierre", score = ScoreManager.GetHigherScores()[2] });
+    }
+    
+    void Update()
+    {
         PlayerScore[] top3Scores = GetHighScores(TOP_SCORE_COUNT);
 
         if (top3Scores.Length == TOP_SCORE_COUNT)
@@ -34,12 +35,7 @@ public class DisplayHighScores : MonoBehaviour
             if (topScoreLabel03)
                 topScoreLabel03.text = "3rd place: " + top3Scores[2].playerName + ", " + top3Scores[2].score + " points";
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     PlayerScore[] GetHighScores(int topCount)

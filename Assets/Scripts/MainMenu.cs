@@ -7,7 +7,6 @@ public class MainMenu : MonoBehaviour
 {
     public string startLevel;
     public string highScoresTable;
-    // public PlayerProgress playerProgress;
 
     public void NewGame()
     {
