@@ -15,7 +15,15 @@ public class ScoreManager : MonoBehaviour
     {
         text = GetComponent<Text>();
 
-        score = 0;
+        resetScore();
+
+        for (int i = 0; i < highScores.Length; i++)
+        {
+            highScoreKey = "HighScore" + (i + 1).ToString();
+            highScores[i] = PlayerPrefs.GetInt(highScoreKey, 0);
+        }
+
+        Debug.Log("Start :" + score);
     }
 
     private void Update()
@@ -39,22 +47,5 @@ public class ScoreManager : MonoBehaviour
     public static int[] GetHigherScores()
     {
         return highScores;
-    }
-
-    void OnDisable()
-    {
-        for (int i = 0; i < highScores.Length; i++)
-        {
-            highScoreKey = "HighScore" + (i + 1).ToString();
-            highScores[i] = PlayerPrefs.GetInt(highScoreKey, 0);
-
-            if (score > highScores[i])
-            {
-                int temp = highScores[i];
-                PlayerPrefs.SetInt(highScoreKey, score);
-                PlayerPrefs.Save();
-                score = temp;
-            }
-        }
     }
 }

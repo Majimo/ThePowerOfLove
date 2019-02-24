@@ -8,6 +8,8 @@ public class EndLevel : MonoBehaviour
     public bool playerInZone;
     public string titleScreen;
 
+    string highScoreKey = "HighScore";
+
     void Start()
     {
         playerInZone = false;        
@@ -18,6 +20,21 @@ public class EndLevel : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.DownArrow) && playerInZone)
         {
             // Update HighScore & Load TitleScreen
+
+            for (int i = 0; i < ScoreManager.highScores.Length; i++)
+            {
+                highScoreKey = "HighScore" + (i + 1).ToString();
+                ScoreManager.highScores[i] = PlayerPrefs.GetInt(highScoreKey, 0);
+                
+                if (ScoreManager.score > ScoreManager.highScores[i])
+                {
+                    int temp = ScoreManager.highScores[i];
+                    PlayerPrefs.SetInt(highScoreKey, ScoreManager.score);
+                    PlayerPrefs.Save();
+                    ScoreManager.score = temp;
+                }
+            }
+
             SceneManager.LoadScene(titleScreen);
         }
     }
