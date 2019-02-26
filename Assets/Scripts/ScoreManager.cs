@@ -19,8 +19,6 @@ public class ScoreManager : MonoBehaviour
 
         ScoreManager sm = new ScoreManager();
         sm.SetHigherScores();
-
-        Debug.Log("Start :" + score);
     }
 
     private void Update()

@@ -26,12 +26,12 @@ public class EndLevel : MonoBehaviour
                 highScoreKey = "HighScore" + (i + 1).ToString();
                 ScoreManager.highScores[i] = PlayerPrefs.GetInt(highScoreKey, 0);
                 
-                if (ScoreManager.score > ScoreManager.highScores[i])
+                if ((ScoreManager.score + TimeManager.GetTimeScore()) > ScoreManager.highScores[i])
                 {
                     int temp = ScoreManager.highScores[i];
-                    PlayerPrefs.SetInt(highScoreKey, ScoreManager.score);
+                    PlayerPrefs.SetInt(highScoreKey, ScoreManager.score + TimeManager.GetTimeScore());
                     PlayerPrefs.Save();
-                    ScoreManager.score = temp;
+                    ScoreManager.score = temp - TimeManager.GetTimeScore();
                 }
             }
 

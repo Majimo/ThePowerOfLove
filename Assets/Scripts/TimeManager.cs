@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TimeManager : MonoBehaviour
 {
     public float timeLeft;
+    public static int timeScore;
     Text text;
     
     void Start()
@@ -18,6 +19,12 @@ public class TimeManager : MonoBehaviour
     void Update()
     {
         timeLeft -= Time.deltaTime;
-        text.text = ((int) timeLeft) + "";
+        timeScore = (int)(timeLeft * 10);
+        text.text = ((int) (timeLeft * 10)) + "";
+    }
+
+    public static int GetTimeScore()
+    {
+        return timeScore;
     }
 }
