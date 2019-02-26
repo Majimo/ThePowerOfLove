@@ -17,11 +17,8 @@ public class ScoreManager : MonoBehaviour
 
         resetScore();
 
-        for (int i = 0; i < highScores.Length; i++)
-        {
-            highScoreKey = "HighScore" + (i + 1).ToString();
-            highScores[i] = PlayerPrefs.GetInt(highScoreKey, 0);
-        }
+        ScoreManager sm = new ScoreManager();
+        sm.SetHigherScores();
 
         Debug.Log("Start :" + score);
     }
@@ -46,6 +43,19 @@ public class ScoreManager : MonoBehaviour
 
     public static int[] GetHigherScores()
     {
+        ScoreManager sm = new ScoreManager();
+        sm.SetHigherScores();
+        return highScores;
+    }
+
+    private int [] SetHigherScores()
+    {
+        for (int i = 0; i < highScores.Length; i++)
+        {
+            highScoreKey = "HighScore" + (i + 1).ToString();
+            highScores[i] = PlayerPrefs.GetInt(highScoreKey, 0);
+        }
+
         return highScores;
     }
 }
