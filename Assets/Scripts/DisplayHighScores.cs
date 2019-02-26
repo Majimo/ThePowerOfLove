@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DisplayHighScores : MonoBehaviour
 {
     private const int TOP_SCORE_COUNT = 3;
 
     private List<PlayerScore> highScores;
+
+    public string mainMenu;
 
     [SerializeField] Text topScoreLabel01;
     [SerializeField] Text topScoreLabel02;
@@ -34,6 +37,11 @@ public class DisplayHighScores : MonoBehaviour
                 topScoreLabel02.text = "2nd place: " + top3Scores[1].playerName + ", " + top3Scores[1].score + " points";
             if (topScoreLabel03)
                 topScoreLabel03.text = "3rd place: " + top3Scores[2].playerName + ", " + top3Scores[2].score + " points";
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(mainMenu);
         }
 
     }

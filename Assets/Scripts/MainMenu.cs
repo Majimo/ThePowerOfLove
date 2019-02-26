@@ -22,32 +22,4 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
-
-    /* public void UpdatePlayerHigherScore(int newScore)
-    {
-        if (newScore > playerProgress.highestScore)
-        {
-            playerProgress.highestScore = newScore;
-            SavePlayerProgress();
-        }
-    }
-
-    public int GetPlayerHigherScore()
-    {
-        return playerProgress.highestScore;
-    }
-
-    private void LoadPlayerProgress()
-    {
-        playerProgress = new PlayerProgress();
-        if (PlayerPrefs.HasKey("highestScore"))
-        {
-            playerProgress.highestScore = PlayerPrefs.GetInt("highestScore");
-        }
-    }
-
-    private void SavePlayerProgress()
-    {
-        PlayerPrefs.SetInt("highestScore", playerProgress.highestScore);
-    } */
 }

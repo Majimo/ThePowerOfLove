@@ -305,6 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2632b112f3a4743aaac70ab18cac17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenu: Title
   topScoreLabel01: {fileID: 1701879404}
   topScoreLabel02: {fileID: 711185066}
   topScoreLabel03: {fileID: 1308669914}
