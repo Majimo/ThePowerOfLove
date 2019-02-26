@@ -53,7 +53,7 @@ public class LevelManager : MonoBehaviour
         player.GetComponent<Renderer>().enabled = true;
         player.GetComponent<Rigidbody2D>().gravityScale = gravityStore;
 
-        player.transform.position = currentCheckPoint.transform.position;
+        player.transform.position = new Vector3(currentCheckPoint.transform.position.x, currentCheckPoint.transform.position.y, -0.5f);
         Instantiate(respawnParticles, currentCheckPoint.transform.position, currentCheckPoint.transform.rotation);
     }
 }
