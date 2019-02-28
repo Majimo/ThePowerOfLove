@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 
     private float moveVelocity;
 
+    public bool isAllowedToMove;
     private bool doubleJumped;
     private Animator anim;
 
@@ -28,6 +29,8 @@ public class PlayerController : MonoBehaviour
         player = GetComponent<Rigidbody2D>();
 
         anim = GetComponent<Animator>();
+
+        isAllowedToMove = true;
     }
 
     private void FixedUpdate()
@@ -44,6 +47,27 @@ public class PlayerController : MonoBehaviour
 
         moveVelocity = 0f;
 
+        if (isAllowedToMove)
+            PlayerMoves();
+
+        // Player Animation
+        anim.SetFloat("Speed", Mathf.Abs(player.velocity.x));
+        anim.SetBool("Grounded", isGrounded);
+        // Flip Animation when player change direction
+        if (player.velocity.x > 0)
+            transform.localScale = new Vector3(1f, 1f, 1f);
+        else if (player.velocity.x < 0)
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            // Instantiate the heart on the player
+            Instantiate(heartMissile, firePoint.position, firePoint.rotation);
+        }
+    }
+
+    private void PlayerMoves()
+    {
         // Player Controls
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
@@ -64,21 +88,12 @@ public class PlayerController : MonoBehaviour
         }
 
         player.velocity = new Vector2(moveVelocity, player.velocity.y);
+    }
 
-        // Player Animation
-        anim.SetFloat("Speed", Mathf.Abs(player.velocity.x));
-        anim.SetBool("Grounded", isGrounded);
-        // Flip Animation when player change direction
-        if (player.velocity.x > 0)
-            transform.localScale = new Vector3(1f, 1f, 1f);
-        else if (player.velocity.x < 0)
-            transform.localScale = new Vector3(-1f, 1f, 1f);
-
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            // Instantiate the heart on the player
-            Instantiate(heartMissile, firePoint.position, firePoint.rotation);
-        }
+    public void StopPlayerMoves()
+    {
+        player.velocity = new Vector2(0, player.velocity.y);
+        isAllowedToMove = false;
     }
 
     void Jump()
