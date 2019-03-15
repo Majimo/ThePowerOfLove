@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
     public static int score;
     Text text;
 
-    public static int[] highScores = new int[3];
+    public static PlayerScore[] highScores;
     string highScoreKey = "HighScore";
 
     private void Start()
@@ -39,21 +39,28 @@ public class ScoreManager : MonoBehaviour
         score = 0;
     }
 
-    public static int[] GetHigherScores()
+    public static PlayerScore[] GetHigherScores()
     {
         ScoreManager sm = new ScoreManager();
         sm.SetHigherScores();
         return highScores;
     }
 
-    private int [] SetHigherScores()
+    private PlayerScore[] SetHigherScores()
     {
+        highScores = new PlayerScore[3];
         for (int i = 0; i < highScores.Length; i++)
         {
             highScoreKey = "HighScore" + (i + 1).ToString();
-            highScores[i] = PlayerPrefs.GetInt(highScoreKey, 0);
+            highScores[i] = new PlayerScore() { playerName = "Pierre", score = PlayerPrefs.GetInt(highScoreKey, 0) };
         }
 
         return highScores;
+    }
+
+    public struct PlayerScore
+    {
+        public int score;
+        public string playerName;
     }
 }

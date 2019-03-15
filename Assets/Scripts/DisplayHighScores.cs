@@ -20,9 +20,12 @@ public class DisplayHighScores : MonoBehaviour
     void Start()
     {
         highScores = new List<PlayerScore>();
-        highScores.Add(new PlayerScore() { playerName = "Pierre", score = ScoreManager.GetHigherScores()[0] });
-        highScores.Add(new PlayerScore() { playerName = "Pierre", score = ScoreManager.GetHigherScores()[1] });
-        highScores.Add(new PlayerScore() { playerName = "Pierre", score = ScoreManager.GetHigherScores()[2] });
+        highScores.Add(new PlayerScore() {
+            playerName = ScoreManager.GetHigherScores()[0].playerName, score = ScoreManager.GetHigherScores()[0].score });
+        highScores.Add(new PlayerScore() {
+            playerName = ScoreManager.GetHigherScores()[0].playerName, score = ScoreManager.GetHigherScores()[1].score });
+        highScores.Add(new PlayerScore() {
+            playerName = ScoreManager.GetHigherScores()[0].playerName, score = ScoreManager.GetHigherScores()[2].score });
     }
     
     void Update()
