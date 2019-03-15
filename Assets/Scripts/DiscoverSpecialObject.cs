@@ -33,6 +33,7 @@ public class DiscoverSpecialObject : MonoBehaviour
 
         StartCoroutine(DisplayMessage());
         Debug.Log("Tu as découvert l'Epée du tragique amoureux !!!");
+        text.text = "Tu as découvert l'Epée du tragique amoureux !!!";
         Debug.Log("Temps :" + Time.time);
     }
 
@@ -49,6 +50,7 @@ public class DiscoverSpecialObject : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         Debug.Log("Le temps est écoulé..." + Time.time);
+        text.text = "";
         player.isAllowedToMove = true;
 
         Destroy(gameObject);
