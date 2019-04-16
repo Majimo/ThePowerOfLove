@@ -801,6 +801,7 @@ GameObject:
   - component: {fileID: 1787614386}
   - component: {fileID: 1787614385}
   - component: {fileID: 1787614384}
+  - component: {fileID: 1787614387}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -868,11 +869,22 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1836670016}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1787614387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787614383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05edfd7e22afcf44b78f27c49825536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1836670015
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,10 +894,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1836670016}
+  - component: {fileID: 1836670018}
   - component: {fileID: 1836670017}
   m_Layer: 0
   m_Name: MusicPlayer
-  m_TagString: Untagged
+  m_TagString: Music
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -897,12 +910,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836670015}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1787614386}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1836670017
 AudioSource:
@@ -1000,6 +1013,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1836670018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836670015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8c91b98a7dfb4489f0c704f4e0205b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2065746179
 GameObject:
   m_ObjectHideFlags: 0
